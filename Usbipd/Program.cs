@@ -163,6 +163,16 @@ static class Program
             }.AddCompletions(completionContext => CompletionGuard(completionContext, () =>
                 UsbDevice.GetAll().Where(d => d.BusId.HasValue).GroupBy(d => d.HardwareId).Select(g => g.Key.ToString())));
             //
+            // bind [--port <TCP_PORT>]
+            //
+            var portOption = new Option<ushort>(
+                alias: new[] { "--port", "-p" },
+            )
+            {
+                ArgumentHelpName = "TCP_PORT",
+                Description = "TCP port for connection",
+            }
+            //
             //  bind
             //
             var bindCommand = new Command("bind", "Bind device\0"
@@ -176,6 +186,7 @@ static class Program
                 busIdOption,
                 forceOption,
                 hardwareIdOption,
+                portOption,
             };
             bindCommand.AddValidator(commandResult =>
             {
