@@ -9,9 +9,9 @@ name: Build
 
 on:
   push:
-    branches: [master]
+    branches: [master, add_tcp_port_setting_feature]
   pull_request:
-    branches: [master]
+    branches: [master, add_tcp_port_setting_feature]
 
 jobs:
   build:
