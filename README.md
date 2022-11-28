@@ -15,6 +15,14 @@ SPDX-License-Identifier: GPL-3.0-only
 
 Windows software for sharing locally connected USB devices to other machines, including Hyper-V guests and WSL 2.
 
+## Build
+
+1) Install dotnet
+2) in PowerShell: dotnet build --configure Release
+3) install Windows SDK with Redist (mandatory)
+4) dotnet build --configure Release Installer (using WiX msi builder)
+5) install builded msi file
+
 ## How to install
 
 This software requires Microsoft Windows 8.1 x64 / Microsoft Windows Server 2012 or newer;
