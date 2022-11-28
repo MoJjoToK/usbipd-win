@@ -29,7 +29,7 @@ static class UsbIp
     public const uint SYSFS_BUS_ID_SIZE = 32;
 
     /// <summary>UsbIp: tools/usbip_network.c: usbip_port</summary>
-    public const ushort USBIP_PORT = 3240;
+    public const ushort USBIP_PORT = 55555;
 
     public enum OpCode : ushort
     {
